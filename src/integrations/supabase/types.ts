@@ -9,169 +9,7 @@ export type Json =
 export type Database = {
   public: {
     Tables: {
-      guides: {
-        Row: {
-          created_at: string | null
-          email: string
-          id: string
-          nom: string
-          pays_affectation: string
-          photo: string | null
-          prenom: string
-          statut: Database["public"]["Enums"]["guide_status"]
-          updated_at: string | null
-        }
-        Insert: {
-          created_at?: string | null
-          email: string
-          id?: string
-          nom: string
-          pays_affectation: string
-          photo?: string | null
-          prenom: string
-          statut?: Database["public"]["Enums"]["guide_status"]
-          updated_at?: string | null
-        }
-        Update: {
-          created_at?: string | null
-          email?: string
-          id?: string
-          nom?: string
-          pays_affectation?: string
-          photo?: string | null
-          prenom?: string
-          statut?: Database["public"]["Enums"]["guide_status"]
-          updated_at?: string | null
-        }
-        Relationships: []
-      }
-      profiles: {
-        Row: {
-          created_at: string | null
-          email: string
-          id: string
-          nom: string
-          prenom: string
-          role: Database["public"]["Enums"]["user_role"]
-          updated_at: string | null
-        }
-        Insert: {
-          created_at?: string | null
-          email: string
-          id: string
-          nom: string
-          prenom: string
-          role?: Database["public"]["Enums"]["user_role"]
-          updated_at?: string | null
-        }
-        Update: {
-          created_at?: string | null
-          email?: string
-          id?: string
-          nom?: string
-          prenom?: string
-          role?: Database["public"]["Enums"]["user_role"]
-          updated_at?: string | null
-        }
-        Relationships: []
-      }
-      visites: {
-        Row: {
-          commentaire_visite: string | null
-          created_at: string | null
-          date_visite: string
-          duree: number
-          guide_id: string | null
-          heure_debut: string
-          heure_fin: string | null
-          id: string
-          lieu_visite: string
-          pays: string
-          photo: string | null
-          statut: Database["public"]["Enums"]["visite_status"]
-          updated_at: string | null
-        }
-        Insert: {
-          commentaire_visite?: string | null
-          created_at?: string | null
-          date_visite: string
-          duree: number
-          guide_id?: string | null
-          heure_debut: string
-          heure_fin?: string | null
-          id?: string
-          lieu_visite: string
-          pays: string
-          photo?: string | null
-          statut?: Database["public"]["Enums"]["visite_status"]
-          updated_at?: string | null
-        }
-        Update: {
-          commentaire_visite?: string | null
-          created_at?: string | null
-          date_visite?: string
-          duree?: number
-          guide_id?: string | null
-          heure_debut?: string
-          heure_fin?: string | null
-          id?: string
-          lieu_visite?: string
-          pays?: string
-          photo?: string | null
-          statut?: Database["public"]["Enums"]["visite_status"]
-          updated_at?: string | null
-        }
-        Relationships: [
-          {
-            foreignKeyName: "visites_guide_id_fkey"
-            columns: ["guide_id"]
-            isOneToOne: false
-            referencedRelation: "guides"
-            referencedColumns: ["id"]
-          },
-        ]
-      }
-      visiteurs: {
-        Row: {
-          commentaire: string | null
-          created_at: string | null
-          id: string
-          nom: string
-          prenom: string
-          present: boolean | null
-          updated_at: string | null
-          visite_id: string | null
-        }
-        Insert: {
-          commentaire?: string | null
-          created_at?: string | null
-          id?: string
-          nom: string
-          prenom: string
-          present?: boolean | null
-          updated_at?: string | null
-          visite_id?: string | null
-        }
-        Update: {
-          commentaire?: string | null
-          created_at?: string | null
-          id?: string
-          nom?: string
-          prenom?: string
-          present?: boolean | null
-          updated_at?: string | null
-          visite_id?: string | null
-        }
-        Relationships: [
-          {
-            foreignKeyName: "visiteurs_visite_id_fkey"
-            columns: ["visite_id"]
-            isOneToOne: false
-            referencedRelation: "visites"
-            referencedColumns: ["id"]
-          },
-        ]
-      }
+      [_ in never]: never
     }
     Views: {
       [_ in never]: never
@@ -180,9 +18,7 @@ export type Database = {
       [_ in never]: never
     }
     Enums: {
-      guide_status: "Actif" | "Inactif"
-      user_role: "Administrateur" | "Utilisateur"
-      visite_status: "à venir" | "en cours" | "terminée"
+      [_ in never]: never
     }
     CompositeTypes: {
       [_ in never]: never
@@ -297,10 +133,6 @@ export type CompositeTypes<
 
 export const Constants = {
   public: {
-    Enums: {
-      guide_status: ["Actif", "Inactif"],
-      user_role: ["Administrateur", "Utilisateur"],
-      visite_status: ["à venir", "en cours", "terminée"],
-    },
+    Enums: {},
   },
 } as const
