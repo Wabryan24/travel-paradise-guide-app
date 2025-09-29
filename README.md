@@ -1,4 +1,4 @@
-# Welcome to your Lovable project
+# Projet de creation d'une application de guide touristique (Travel Paradise) avec lovable
 
 ## Project info
 
